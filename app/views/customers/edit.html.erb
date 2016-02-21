@@ -1,0 +1,23 @@
+<h1>顧客データの編集</h1>
+
+<%= render partial: 'form' %>
+
+<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#delete-customer">顧客情報を削除する</button>
+
+<div class="modal fade" id="delete-customer">
+ <div class="modal-dialog">
+   <div class="modal-content">
+     <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+       <h4 class="modal-title">顧客情報の削除</h4>
+     </div>
+     <div class="modal-body">
+       <p><%= @customer.family_name %>さんを削除しますか？</p>
+     </div>
+     <div class="modal-footer">
+       <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
+       <%= link_to '削除する', @customer, method: :delete, class: "btn btn-danger" %>
+     </div>
+   </div>
+ </div>
+</div>
